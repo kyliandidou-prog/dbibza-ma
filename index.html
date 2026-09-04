@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>دَبِيبْزَة ماء 💧 | Eau minérale en Tunisie</title>
+
+    <link rel="icon" href="logo.png" type="image/png">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header class="hero">
+
+        <nav>
+          <div class="logo">
+    <img src="logo.png" alt="دبيبزة ماء - Eau minérale en Tunisie">
+</div>
+
+            <button id="themeButton">
+                🌙
+            </button>
+        </nav>
+
+        <div class="hero-content">
+
+            <h1>Trouve de l'eau minérale</h1>
+
+            <p>
+                Découvre les endroits où l'eau est disponible
+                près de toi.
+            </p>
+
+            <button
+                class="main-button"
+                onclick="scrollToReport()"
+            >
+                ➕ Signaler de l'eau
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- RECHERCHE -->
+
+        <section class="card">
+
+            <h2>🔎 Rechercher de l'eau</h2>
+
+            <label for="governorate">
+                Gouvernorat
+            </label>
+
+            <input
+                id="governorate"
+                list="governorates"
+                placeholder="Exemple : Ariana"
+                oninput="updateZones()"
+            >
+
+            <datalist id="governorates"></datalist>
+
+
+            <label for="zone">
+                Ville / quartier
+            </label>
+
+            <input
+                id="zone"
+                list="zones"
+                placeholder="Exemple : Riadh Andalous"
+            >
+
+            <datalist id="zones"></datalist>
+
+
+            <label for="searchBrand">
+                Marque
+            </label>
+
+            <select id="searchBrand">
+
+                <option value="">
+                    Toutes les marques
+                </option>
+
+                <option>Sabrine</option>
+                <option>Safia</option>
+                <option>Cristaline</option>
+                <option>Marwa</option>
+                <option>Melliti</option>
+                <option>Fourat</option>
+                <option>Jektiss</option>
+                <option>Garci</option>
+                <option>Dima</option>
+                <option>Palma</option>
+                <option>Bargou</option>
+                <option>Oulmes</option>
+                <option>Royale</option>
+                <option>Délice</option>
+                <option>Prima</option>
+                <option>Oasis</option>
+
+            </select>
+
+
+            <button
+                class="blue-button"
+                onclick="searchReports()"
+            >
+                🔎 Rechercher
+            </button>
+
+
+            <button
+                class="location-button"
+                onclick="findNearby()"
+            >
+                📍 Trouver autour de moi
+            </button>
+
+        </section>
+
+
+        <!-- STATISTIQUES -->
+
+        <section class="stats">
+
+            <div class="stat-card">
+                <span id="totalReports">0</span>
+                <p>Signalements</p>
+            </div>
+
+            <div class="stat-card">
+                <span id="availableReports">0</span>
+                <p>Eau disponible</p>
+            </div>
+
+            <div class="stat-card">
+                <span id="emptyReports">0</span>
+                <p>Pas d'eau</p>
+            </div>
+
+        </section>
+
+
+        <!-- RESULTATS -->
+
+        <section class="card">
+
+            <h2>📍 Résultats</h2>
+
+            <div id="results">
+
+                <p class="empty">
+                    Aucun résultat pour le moment.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- SIGNALER -->
+
+        <section
+            class="card"
+            id="reportSection"
+        >
+
+            <h2>➕ Signaler de l'eau</h2>
+
+            <p>
+                Tu as trouvé de l'eau ?
+                Informe les autres utilisateurs.
+            </p>
+
+
+            <label for="reportGovernorate">
+                Gouvernorat
+            </label>
+
+            <input
+                id="reportGovernorate"
+                list="governorates"
+                placeholder="Choisis un gouvernorat"
+                oninput="updateReportZones()"
+            >
+
+
+            <label for="reportZone">
+                Ville / quartier
+            </label>
+
+            <input
+                id="reportZone"
+                list="reportZones"
+                placeholder="Choisis une zone"
+            >
+
+            <datalist id="reportZones"></datalist>
+
+
+            <label for="store">
+                Magasin
+            </label>
+
+            <input
+                id="store"
+                list="stores"
+                placeholder="Exemple : Carrefour"
+            >
+
+            <datalist id="stores">
+
+                <option value="Carrefour">
+                <option value="Carrefour Market">
+                <option value="Géant">
+                <option value="Monoprix">
+                <option value="Magasin Général">
+                <option value="Aziza">
+
+            </datalist>
+
+
+            <label for="reportBrand">
+                Marque d'eau
+            </label>
+
+            <select id="reportBrand">
+
+                <option value="">
+                    Choisir une marque
+                </option>
+
+                <option>Sabrine</option>
+                <option>Safia</option>
+                <option>Cristaline</option>
+                <option>Marwa</option>
+                <option>Melliti</option>
+                <option>Fourat</option>
+                <option>Jektiss</option>
+                <option>Garci</option>
+                <option>Dima</option>
+                <option>Palma</option>
+                <option>Bargou</option>
+                <option>Oulmes</option>
+                <option>Royale</option>
+                <option>Délice</option>
+                <option>Prima</option>
+                <option>Oasis</option>
+
+            </select>
+
+
+            <label for="price">
+                Prix
+            </label>
+
+            <input
+                id="price"
+                type="number"
+                min="0"
+                step="0.1"
+                placeholder="Exemple : 1.200"
+            >
+
+
+            <div class="availability-buttons">
+
+                <button
+                    class="green-button"
+                    onclick="submitReport(true)"
+                >
+                    💧 Il y a de l'eau
+                </button>
+
+                <button
+                    class="red-button"
+                    onclick="submitReport(false)"
+                >
+                    ❌ Il n'y a pas d'eau
+                </button>
+
+            </div>
+
+
+            <p id="reportMessage"></p>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <h3>دبيبزة ماء 💧</h3>
+
+        <p>
+            Projet communautaire tunisien 🇹🇳
+        </p>
+
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

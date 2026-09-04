@@ -1,0 +1,467 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #172033;
+    background: #f3f7ff;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 430px;
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            #00e5ff,
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            #a855f7,
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #0061ff,
+            #00c6ff
+        );
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    width: 92%;
+    max-width: 1100px;
+    margin: auto;
+
+    padding: 22px 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+    display: block;
+}
+
+#themeButton {
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.2);
+    color: white;
+
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.hero-content {
+    width: 92%;
+    max-width: 900px;
+
+    margin: 60px auto;
+
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 19px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    width: 92%;
+    max-width: 1000px;
+
+    margin: -45px auto 50px;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.card {
+    background: white;
+
+    padding: 28px;
+    margin-bottom: 22px;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.10);
+}
+
+.card h2 {
+    margin-top: 0;
+}
+
+
+/* =========================
+   FORMULAIRES
+========================= */
+
+label {
+    display: block;
+
+    margin-top: 17px;
+    margin-bottom: 7px;
+
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+
+    padding: 14px;
+
+    border-radius: 13px;
+
+    border: 2px solid #dce4f0;
+
+    font-size: 16px;
+
+    outline: none;
+
+    background: white;
+}
+
+input:focus,
+select:focus {
+    border-color: #0072ff;
+}
+
+
+/* =========================
+   BOUTONS
+========================= */
+
+button {
+    border: none;
+
+    padding: 15px;
+
+    border-radius: 13px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+.main-button {
+    margin-top: 20px;
+
+    background: white;
+    color: #0061ff;
+}
+
+.blue-button,
+.location-button {
+    width: 100%;
+    margin-top: 18px;
+
+    color: white;
+}
+
+.blue-button {
+    background:
+        linear-gradient(
+            90deg,
+            #0061ff,
+            #00a6ff
+        );
+}
+
+.location-button {
+    background:
+        linear-gradient(
+            90deg,
+            #7c3aed,
+            #a855f7
+        );
+}
+
+
+/* =========================
+   STATISTIQUES
+========================= */
+
+.stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 22px;
+}
+
+.stat-card {
+    background: white;
+
+    padding: 22px;
+
+    text-align: center;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.08);
+}
+
+.stat-card span {
+    font-size: 32px;
+
+    font-weight: bold;
+
+    color: #0061ff;
+}
+
+.stat-card p {
+    margin-bottom: 0;
+}
+
+
+/* =========================
+   DISPONIBILITE
+========================= */
+
+.availability-buttons {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+.green-button,
+.red-button {
+    color: white;
+}
+
+.green-button {
+    background:
+        linear-gradient(
+            90deg,
+            #00c853,
+            #00a844
+        );
+}
+
+.red-button {
+    background:
+        linear-gradient(
+            90deg,
+            #ff416c,
+            #ff4b2b
+        );
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+#reportMessage {
+    font-weight: bold;
+
+    margin-top: 18px;
+
+    text-align: center;
+}
+
+
+/* =========================
+   RESULTATS
+========================= */
+
+.report {
+    padding: 18px;
+
+    margin-top: 15px;
+
+    border-radius: 17px;
+
+    background: #f5f8ff;
+
+    border-left: 5px solid #0061ff;
+}
+
+.report h3 {
+    margin-top: 0;
+}
+
+.available {
+    color: #00a844;
+
+    font-weight: bold;
+}
+
+.unavailable {
+    color: #e53935;
+
+    font-weight: bold;
+}
+
+.confirmed {
+    color: #7c3aed;
+
+    font-weight: bold;
+}
+
+.empty {
+    color: #718096;
+
+    text-align: center;
+
+    padding: 25px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+
+    color: white;
+
+    padding: 35px;
+
+    background: #071a35;
+}
+
+
+/* =========================
+   MODE SOMBRE
+========================= */
+
+body.dark-mode {
+    color: #f1f5f9;
+    background: #0f172a;
+}
+
+body.dark-mode .card,
+body.dark-mode .stat-card {
+    background: #1e293b;
+
+    color: #f1f5f9;
+}
+
+body.dark-mode input,
+body.dark-mode select {
+    background: #0f172a;
+
+    color: #f1f5f9;
+
+    border-color: #475569;
+}
+
+body.dark-mode .report {
+    background: #263449;
+
+    color: #f1f5f9;
+}
+
+body.dark-mode .empty {
+    color: #cbd5e1;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .logo img {
+        width: 60px;
+        height: 60px;
+       }
+    .hero {
+        min-height: 390px;
+    }
+
+    .hero-content {
+        margin-top: 45px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .availability-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 20px;
+
+        border-radius: 20px;
+    }
+}
